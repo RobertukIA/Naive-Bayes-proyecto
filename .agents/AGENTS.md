@@ -2,23 +2,23 @@
 
 ## [ORCHESTRATOR] Coordinator
 - **Role:** Session Manager.
-- **Input:** Director's Prompt + `sources/` context.
-- **Memory:** Inherits `.agents/expertise/global_context.md`.
+- **Input:** Director's Prompt + `fuentes/` context.
+- **Memory:** Inherits global context.
 - **Constraint:** Delegating only. No direct building.
 
 ## [LEAD] Planning_Lead
 - **Role:** Task Strategist.
-- **Task:** Translate high-level goals into technical milestones in `.agents/specs/plan.md`.
+- **Task:** Translate high-level goals into technical milestones for a Naive Bayes tutorial paper.
 - **Policy:** Zero micromanagement. Updates only planning domain.
 
 ## [EXECUTOR] Builder
 - **Role:** Synthesis & LaTeX Compilation.
-- **Skills:** Cargar y obedecer estrictamente las directrices de `.agents/skills/superpowers/`. Utilizar obligatoriamente `writing-plans` antes de codificar y `verification-before-completion` antes de entregar.
-- **Input:** `.agents/specs/plan.md` + `fuentes/informe-naive-bayes-draft.md`.
+- **Skills:** STRICTLY obey `.agents/skills/superpowers/`. Use `writing-plans` before coding and `verification-before-completion` before submitting.
+- **Input:** `fuentes/informe-naive-bayes-draft.md` and `fuentes/bibliografia.md`.
 - **Output:** `output/paper.tex`.
 
 ## [VALIDATOR] Auditor_Ultimo
 - **Role:** Quality Gatekeeper.
 - **Checklist:** `.agents/specs/till_done.json`.
-- **Logic:** REJECT if Coherence < 100%, Plagiarism > 0%, or APA7 mismatch.
-- **Action:** If REJECT, inject corrective feedback to Builder expertise.
+- **Logic:** REJECT if Coherence is false, Plagiarism detected, or APA7 mismatch.
+- **Action:** If REJECT, inject corrective feedback and force rework loop.
