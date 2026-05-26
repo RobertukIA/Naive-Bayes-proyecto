@@ -1,0 +1,12 @@
+{
+  "project": "Naive Bayes Tutorial Paper",
+  "iteration": 0,
+  "max_iterations": 5,
+  "criteria": {
+    "logical_coherence": false,
+    "plagiarism_check": false,
+    "apa7_citations": false
+  },
+  "lock_status": "LOCKED",
+  "next_agent": "PLANNER"
+}
